@@ -1,21 +1,46 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, Image, Text } from 'react-native';
+import icon from "./SnapmartIcon.png";
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <ScrollView>
+        <Text style={{fontSize: 24}}>下にスクロールしてください</Text>
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Text style={{fontSize: 24}}>さらに続きます</Text>
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Text style={{fontSize: 24}}>もっと続きます</Text>
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+        <Image source={icon} style={{width: 50, height: 50}} />
+      </ScrollView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
