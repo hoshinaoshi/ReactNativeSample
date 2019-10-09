@@ -5,7 +5,9 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={{flex:1}}>
-        {// justifyContentを変更すると、Flexアイテムの配置が変わります }
+        {
+          // justifyContentを変更すると、Flexアイテムの配置が変わります
+        }
         <View style={{...styles.container, justifyContent: "center"}}>
           <View style={{...styles.item, backgroundColor: "red"}} />
           <View style={{...styles.item, backgroundColor: "yellow"}} />
