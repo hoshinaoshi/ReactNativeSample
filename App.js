@@ -1,11 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <FlatList
+          data={[
+            {key: "佐藤"},
+            {key: "鈴木"},
+            {key: "高橋"},
+            {key: "田中"},
+            {key: "伊藤"},
+            {key: "渡辺"},
+            {key: "山本"},
+            {key: "中村"},
+            {key: "小林"},
+            {key: "加藤"},
+            {key: "吉田"},
+            {key: "山田"},
+            {key: "佐々木"},
+            {key: "山口"},
+            {key: "松本"},
+            {key: "井上"},
+          ]}
+          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+        />
       </View>
     );
   }
@@ -13,9 +33,12 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+   flex: 1,
+   paddingTop: 24
   },
-});
+  item: {
+    padding: 16,
+    fontSize: 18,
+    height: 64,
+  },
+})
