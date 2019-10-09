@@ -1,11 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Button, Text, View } from 'react-native';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Button
+          onPress={() => {alert("onPress")}}
+          title="ボタンA"
+        />
+        <Button
+          color="red"
+          onPress={() => {alert("onPress")}}
+          title="ボタンB"
+        />
+        <Button
+          disabled={true}
+          onPress={() => {alert("onPress")}}
+          title="ボタンC"
+        />
       </View>
     );
   }
