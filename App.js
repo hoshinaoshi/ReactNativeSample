@@ -1,12 +1,41 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={
+      name: "hello",
+    };
+  }
+
+  componentDidMount() {
+    Alert.alert("componentDidMount")
+  }
+
+  componentDidUpdate(prevProps) {
+    Alert.alert("componentDidUpdate")
+  }
+
+  changeName() {
+    this.setState({
+      name: "こんにちは"
+    })
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Child name={this.state.name}></Child>
+        <Button onPress={() =>this.changeName()} title="changeName" />
       </View>
+    );
+  }
+}
+
+class Child extends React.Component {
+  render() {
+    return (
+      <Text>{this.props.name}</Text>
     );
   }
 }
