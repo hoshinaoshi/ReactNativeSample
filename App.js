@@ -6,7 +6,7 @@ export default class App extends React.Component {
   render() {
     return (
       <ScrollView>
-        <Text style={{fontSize: 24}}>下にスクロールしてください</Text>
+        <Text style={{fontSize: 24, marginTop:24}}>下にスクロールしてください</Text>
         <Image source={icon} style={{width: 50, height: 50}} />
         <Image source={icon} style={{width: 50, height: 50}} />
         <Image source={icon} style={{width: 50, height: 50}} />
