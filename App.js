@@ -1,42 +1,51 @@
-import React from 'react';
-import { Button } from 'react-native';
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import {createAppContainer} from "react-navigation";
+import {createStackNavigator} from "react-navigation-stack";
+import { createBottomTabNavigator } from "react-navigation-tabs";
 
-class HomeScreen extends React.Component {
+class TabAScreen extends React.Component {
   static navigationOptions = {
-    title: "一覧",
+    title: "タブA",
   };
   render() {
     return (
-      <Button
-        title="詳細画面へ"
-        onPress={() => this.props.navigation.navigate("Detail")}
-      />
+      <View style={styles.container}>
+        <Text>タブA</Text>
+      </View>
     );
   }
 }
 
-class DetailScreen extends React.Component {
+class TabBScreen extends React.Component {
   static navigationOptions = {
-    title: "詳細",
+    title: "タブB",
   };
   render() {
     return (
-      <Button
-        title="一覧画面へ"
-        onPress={() => this.props.navigation.goBack()}
-      />
+      <View style={styles.container}>
+        <Text>タブB</Text>
+      </View>
     );
   }
 }
 
-const MainNavigator = createStackNavigator({
-  Home:   { screen: HomeScreen },
-  Detail: { screen: DetailScreen },
-});
+const BottomNavigation = createBottomTabNavigator(
+  {
+    TabAScreen,
+    TabBScreen,
+  }
+)
 
-const App = createAppContainer(MainNavigator);
+const App = createAppContainer(BottomNavigation);
 
 export default App;
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
