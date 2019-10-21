@@ -1,21 +1,42 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
 
-export default class App extends React.Component {
+class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: "一覧",
+  };
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <Button
+        title="詳細画面へ"
+        onPress={() => this.props.navigation.navigate("Detail")}
+      />
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+class DetailScreen extends React.Component {
+  static navigationOptions = {
+    title: "詳細",
+  };
+  render() {
+    return (
+      <Button
+        title="一覧画面へ"
+        onPress={() => this.props.navigation.goBack()}
+      />
+    );
+  }
+}
+
+const MainNavigator = createStackNavigator({
+  Home:   { screen: HomeScreen },
+  Detail: { screen: DetailScreen },
 });
+
+const App = createAppContainer(MainNavigator);
+
+export default App;
+
