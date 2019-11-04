@@ -1,5 +1,5 @@
 import { createStore as reduxCreateStore, applyMiddleware, combineReducers } from "redux";
-
+import logger from "redux-logger";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./sagas"
 
@@ -14,6 +14,7 @@ export default function createStore() {
     }),
     applyMiddleware(
       sagaMiddleware,
+      logger
     ),
   );
   sagaMiddleware.run(rootSaga)

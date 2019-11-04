@@ -1,4 +1,4 @@
-import { call, put, take } from "redux-saga/effects"
+import { call, put, takeLatest } from "redux-saga/effects"
 
 // action type
 const INCREMENT = "HOME_INCREMENT";
@@ -31,7 +31,7 @@ function* incrementCount(action) {
 }
 
 export const HomeSagas = [
-  take(INCREMENT, incrementCount),
+  takeLatest(INCREMENT, incrementCount),
 ]
 
 // reducer
