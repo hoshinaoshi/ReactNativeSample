@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from 'react-native';
+import { Linking } from 'expo';
+import { View, Button } from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
@@ -7,6 +8,12 @@ class HomeScreen extends React.Component {
   static navigationOptions = {
     title: "一覧",
   };
+  _handleRedirect(event) {
+    Linking.parse(event.url);
+  };
+  async componentDidMount() {
+    Linking.addEventListener('url', this._handleRedirect);
+  }
   render() {
     return (
       <Button
@@ -32,11 +39,12 @@ class DetailScreen extends React.Component {
 }
 
 const MainNavigator = createStackNavigator({
-  Home:   { screen: HomeScreen },
-  Detail: { screen: DetailScreen },
+  Home:   { screen: HomeScreen,   path: "home" },
+  Detail: { screen: DetailScreen, path: "detail" },
 });
 
-const App = createAppContainer(MainNavigator);
+const prefix = Linking.makeUrl("/");
+const AppContainer = createAppContainer(MainNavigator);
+const App = () => <AppContainer uriPrefix={prefix} />;
 
-export default App;
-
+export default App

@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "myapp",
     "name": "SampleApp",
     "slug": "ReactNativeSample",
     "privacy": "public",
