@@ -22,12 +22,13 @@ export default class App extends React.Component {
       Alert.alert("Error")
     }
     this.setState({token: token})
+    // 通常はこの後にトークンをバックエンドに渡します。
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.state.token}</Text>
+        <Text selectable={true}>{this.state.token}</Text>
       </View>
     );
   }
