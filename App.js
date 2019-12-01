@@ -1,8 +1,6 @@
 import React from 'react';
 import { View, Button, Linking } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
 
 export default class App extends React.Component {
   _handleOpenWithLinking = () => {
